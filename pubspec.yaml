@@ -1,0 +1,39 @@
+name: woojr_todo
+description: A new Flutter project.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.0.3 <4.0.0"
+
+dependencies:
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.3
+  go_router: ^13.1.0
+  shared_preferences: ^2.2.2
+  rename: ^3.0.1
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter_launcher_icons:
+  android: "slate_icon"
+  image_path: "assets/slate_icon.png"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: MavenPro
+      fonts:
+        - asset: fonts/MavenPro-SemiBold.ttf
+        - asset: fonts/MavenPro-Regular.ttf
+        - asset: fonts/MavenPro-Medium.ttf
+        - asset: fonts/MavenPro-Bold.ttf
+        - asset: fonts/MavenPro-ExtraBold.ttf
+        - asset: fonts/MavenPro-Black.ttf
