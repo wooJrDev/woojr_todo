@@ -37,25 +37,6 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
     localData.saveLocalData(todoList: taskList);
     emit(TodoListState(taskList: taskList));
 
-    // final state = this.state;
-    // final List<Task> taskList;
-    // if (state is TodoEmptyState) {
-    //   //TODO: see if you can make this cleaner (don't duplicate savelocaldata)
-    //   localData.saveLocalData(todoList: <Task>[event.task]);
-    //   taskList = <Task>[event.task];
-    //   emit(TodoListState(taskList: <Task>[event.task]));
-    // } else if (state is TodoListState) {
-    //   taskList = <Task>[event.task];
-    //   localData.saveLocalData(todoList: List.from(state.taskList)..add(event.task));
-    //   emit(TodoListState(taskList: List.from(state.taskList)..add(event.task)));
-    // } else {
-    //   taskList = <Task>[];
-    // }
-
-    //   if (taskList == null) {
-
-    //   localData.saveLocalData(todoList: taskList);
-    //   }
   }
 
   _todoUpdateTask(TodoUpdateTaskEvent event, Emitter<TodoState> emit) async {
