@@ -7,7 +7,7 @@ sealed class TodoEvent extends Equatable {
   List<Object> get props => [];
 }
 
-final class TodoAddTaskEvent extends TodoEvent {
+class TodoAddTaskEvent extends TodoEvent {
   final Task task;
 
   const TodoAddTaskEvent({required this.task});

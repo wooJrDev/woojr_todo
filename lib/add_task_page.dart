@@ -89,8 +89,14 @@ class _AddTaskPageState extends State<AddTaskPage> {
                             style: const TextStyle(fontFamily: "MavenPro", fontSize: 20),
                             controller: taskNameController,
                             onFieldSubmitted: (newValue) {
-                              context.read<TodoBloc>().add(
-                                  TodoAddTaskEvent(task: Task(taskName: taskNameController.text)));
+                              context.read<TodoBloc>()
+                                ..add(
+                                    TodoAddTaskEvent(task: Task(taskName: taskNameController.text)))
+                                ..add(TodoAddTaskEvent(
+                                    task: Task(taskName: taskNameController.text)));
+                              // context
+                              //     .read<TodoBloc>()
+                              //     .add(TodoAddTaskEvent(task: Task(taskName: "Something")));
                               context.pop();
                             },
                           ),
@@ -102,8 +108,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
                             borderRadius: BorderRadius.circular(50),
                             onTap: () {
                               widget.initTask == null
-                                  ? context.read<TodoBloc>().add(TodoAddTaskEvent(
-                                      task: Task(taskName: taskNameController.text)))
+                                  ? () {
+                                      context
+                                          .read<TodoBloc>()
+                                          .add(TodoAddTaskEvent(task: Task(taskName: "asdasd")));
+                                      // context.read<TodoBloc>().add(TodoAddTaskEvent(
+                                      //     task: Task(taskName: taskNameController.text)));
+                                    }
                                   : context.read<TodoBloc>().add(TodoUpdateTaskEvent(
                                       task: widget.initTask!
                                           .copyWith(taskName: taskNameController.text),

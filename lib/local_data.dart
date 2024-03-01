@@ -23,7 +23,6 @@ class LocalData {
     String? localData = pref.getString(AppLocalDataKey.todoListKey);
     // jsonDecode(source)
     List<Task> todoList = localData == null ? [] : Task.listFromJson(jsonData: localData);
-    print("Local Data: $todoList");
     return todoList;
   }
 

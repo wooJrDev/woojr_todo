@@ -14,7 +14,7 @@ class Task {
   }
 
   @override
-  String toString() => 'Task(taskName: $taskName, isComplete: $isComplete)';
+  String toString() => 'Task(taskID: $taskID, taskName: $taskName, isComplete: $isComplete)';
 
   Task copyWith({
     String? taskName,
@@ -51,4 +51,17 @@ class Task {
     return todoList;
   }
   // factory Task.fromJson(String source) => Task.fromMap(json.decode(source));
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Task &&
+        other.taskID == taskID &&
+        other.taskName == taskName &&
+        other.isComplete == isComplete;
+  }
+
+  @override
+  int get hashCode => taskID.hashCode ^ taskName.hashCode ^ isComplete.hashCode;
 }
